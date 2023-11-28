@@ -8,6 +8,7 @@
     </head>
     <body>
         <h1 class="title">{{ $post->title }} </h1>
+        <a href="/categolies/{{ $post->categoly->id }}">{{ $post->categoly->name }}</a>
         <div class='content'>
             <div class='content-post'>
                 <h3>本文</h3>

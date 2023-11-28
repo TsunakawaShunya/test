@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Post;
 use App\Http\Requests\PostRequest;
+use App\Models\Categoly;
 
 class PostController extends Controller
 {
@@ -21,9 +22,9 @@ class PostController extends Controller
     }
     
     // 新規作成
-    public function create()
+    public function create(Categoly $categoly)
     {
-        return view('posts.create');
+        return view('posts.create')->with(['categolies' => $categoly->get()]);
     }
     
     // 保存

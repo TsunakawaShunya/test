@@ -11,11 +11,13 @@
         <a href="/posts/create">ブログ作成</a>
         <div class='posts'>
             @foreach($posts as $post)
+                    <div class="category">
+                        [<a href="/categolies/{{ $post->categoly->id }}">{{ $post->categoly->name }}]</a>
+                    </div>
                 <div class='post'>
                     <a href="/posts/{{ $post->id }}">
                         <h2 class='title'>{{ $post->title }}</h2>
                     </a>
-                    <a href="/categolies/{{ $post->categoly->id }}">{{ $post->categoly->name }}</a>
                     <p class='body'>{{ $post->body }}</p>
                     <form action="/posts/{{ $post->id }}" id="form_{{ $post->id }}" method="post">
                         @csrf

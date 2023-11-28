@@ -18,6 +18,7 @@
                 <input type="text" name=post[title] placeholder="タイトル" value={{ $post->title }}>
                 <p class="title__error" style="color:red">{{ $errors->first('post.title') }}</p>
             </div>
+                <select name="post[categoly_id]">
             <div class="body">
                 <h2>body</h2>
                 <textarea name=post[body] placeholder="本文">{{ $post->body }}</textarea>
