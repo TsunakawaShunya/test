@@ -10,6 +10,14 @@
         <h1>BLOG NAME</h1>
         <form action="/posts" method="POST">
             @csrf
+            <div class="category">
+                <h2>Category</h2>
+                <select name="post[categoly_id]">
+                    @foreach($categolies as $categoly)
+                        <option value="{{ $categoly->id }}">{{ $categoly->name }}</option>
+                    @endforeach
+                </select>
+            </div>
             <div class="title">
                 <h2>Title</h2>
                 <input type="text" name=post[title] placeholder="タイトル" value="{{ old('post.title') }}">
